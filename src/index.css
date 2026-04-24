@@ -1,0 +1,28 @@
+html {
+   font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: var(--blue-color);
+}
+
+.card-round-box{
+   background: var( --white-back-color);
+    padding: var( --padding-both);
+    border-radius: var( --border-radius);
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.flex-column-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  row-gap: 0.3rem;
+}
+

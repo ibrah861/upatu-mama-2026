@@ -1,0 +1,82 @@
+.auth-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    width: 100%;
+}
+
+.form-wrapper {
+    width: 20rem;
+}
+
+.form-wrapper > h2 {
+    margin-bottom: 0.7rem;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+}
+
+.form-input-box > label{
+   font-weight: 400;
+}
+
+.form-input-box {
+    margin: var(--margin-top-bottom);
+}
+
+.form-input-box > input{
+    background: rgb(245, 245, 245);
+    padding: 0.5rem 0;
+    border: 1px solid blue;
+}
+
+.form-input-box > input:focus{
+    outline:1px solid green;
+    border: none;
+}
+
+.form-input-box >input::placeholder{
+    padding: 0 0.7em;
+}
+
+.signin-description {
+    font-weight: 200;
+    text-align: justify;
+    margin-bottom: 1.7rem;
+}
+
+.phone-email-box {
+    text-decoration: underline;
+    color: blue;
+}
+
+.or-usephone {
+    text-align: center;
+    padding: 0.5em 0;
+    color: red;
+    margin-bottom: 0.5rem;
+}
+
+.signin-text {
+    color: var(--green-color2);
+    text-align: right;
+}
+
+.margin-top {
+    margin-top: 2rem;
+}
+
+.flex-center {
+     display: flex;
+     column-gap: 0.5em;
+    justify-content: right;
+    align-items: center;
+}
+
+.font-size {
+    font-weight: 300;
+}
