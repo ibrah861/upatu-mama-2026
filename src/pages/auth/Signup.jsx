@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 // Components
 import { Loader } from "../../component/Loader/Loader";
 
+// assets
+import mia from "../../assets/mia.svg";
+
 // Signin
 export const Signup = () => {
   const [emailPhoneBox, setEmailPhoneBox] = useState(false);
@@ -18,6 +21,13 @@ export const Signup = () => {
     <>
       <div className="auth-center">
         <div className="form-wrapper card-round-box">
+          <div className="mia">
+            <img src={mia} alt="mia" />
+          </div>
+
+          <hr />
+          <br />
+
           <h2>Ingia</h2>
 
           <p className="signin-description">
@@ -65,7 +75,7 @@ export const Signup = () => {
               ) : (
                 <div className="signin-text flex-center">
                   <Loader />
-                  <span>Tafadhi subiri Inaingia...</span>
+                  <span>Tafadhali subiri...</span>
                 </div>
               )}
             </div>
