@@ -65,7 +65,7 @@ export const Signup = () => {
               ) : (
                 <div className="signin-text flex-center">
                   <Loader />
-                  <span> Inaingia...</span>
+                  <span>Tafadhi subiri Inaingia...</span>
                 </div>
               )}
             </div>

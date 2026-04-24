@@ -66,6 +66,10 @@ form {
     text-align: right;
 }
 
+.signin-text > span{
+   font-size: smaller;
+}
+
 .margin-top {
     margin-top: 2rem;
 }
