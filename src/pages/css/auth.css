@@ -129,3 +129,7 @@ button:hover {
 .or-usephone {
     text-align: center;
 }
+
+.loader-margin {
+    margin-top: 1.3rem;
+}

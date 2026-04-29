@@ -90,7 +90,7 @@ export const Signup = () => {
             )}
           </div>
 
-          <div className="form-input-box flex-column-left margin-top">
+          <div className="form-input-box loader-margin">
             {loading ? (
               <div className="signin-text flex-center">
                 <Loader />
