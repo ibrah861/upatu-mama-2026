@@ -8,6 +8,7 @@ import "./component/Loader/Loader.css";
 // Pages
 import { Signup } from "./pages/auth/Signup";
 import { NotFound } from "./pages/generalRoutes/NotFound";
+import { UserDashboard } from "./pages/generalRoutes/UserDashboard";
 
 function App() {
   //
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Signup />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/userdashboard" element={<UserDashboard />} />
       </Routes>
     </>
   );

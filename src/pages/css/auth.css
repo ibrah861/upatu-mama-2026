@@ -1,103 +1,131 @@
+/* Layout */
 .auth-center {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100dvh;
-    width: 100%;
+    min-height: 100vh;
+    /* background: #f7f7f7; */
 }
 
+/* Card */
 .form-wrapper {
-    width: 20rem;
+    width: 100%;
+    max-width: 22rem;
+    padding: 1.5rem;
 }
 
+.card-round-box {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Logo */
 .mia {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin: 0.5rem 0;
+    margin-bottom: 1rem;
 }
 
 .mia img {
-    width: 3rem;
-    height: 3rem;
-    border-radius:50%;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     object-fit: contain;
-    box-shadow: 0px 0px 2px black;
 }
 
-.form-wrapper > h2 {
-    margin-bottom: 0.7rem;
+/* Text */
+h2 {
     text-align: center;
-}
-
-form {
-    width: 100%;
-}
-
-.form-input-box > label{
-   font-weight: 400;
-}
-
-.form-input-box {
-    margin: var(--margin-top-bottom);
-}
-
-.form-input-box > input{
-    background: rgb(245, 245, 245);
-    padding: 0.5rem 0;
-    border: 1px solid blue;
-}
-
-.form-input-box > input:focus{
-    outline:1px solid green;
-    border: none;
-}
-
-.form-input-box >input::placeholder{
-    padding: 0 0.7em;
+    margin-bottom: 0.5rem;
 }
 
 .signin-description {
-    font-weight: 200;
-    text-align: justify;
-    margin-bottom: 1.7rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+/* Inputs */
+.form-input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-input-box label {
+    margin-bottom: 0.3rem;
+    font-size: 0.85rem;
+}
+
+.form-input-box input {
+    padding: 0.6rem 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #f9f9f9;
+    transition: 0.2s;
+}
+
+.form-input-box input:focus {
+    outline: none;
+    border-color: #2e7d32;
+    background: #fff;
+}
+
+/* Toggle */
+.toggle {
+    text-align: center;
+    color: blue;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+}
+
+/* Error */
+.error-text {
+    color: red;
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 0.65rem;
+    margin-top: 0.7rem;
+    background: var( --button-bg-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button:hover {
+    background: #256428;
+}
+
+/* Loader */
+.signin-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2e7d32;
 }
 
 .phone-email-box {
+    margin-top: 0.7rem;
+    color:blue;
+    font-size: small;
     text-decoration: underline;
-    color: blue;
 }
 
 .or-usephone {
     text-align: center;
-    padding: 0.5em 0;
-    color: red;
-    margin-bottom: 0.5rem;
-}
-
-.signin-text {
-    color: var(--green-color2);
-    text-align: right;
-}
-
-.signin-text > span{
-   font-size: smaller;
-}
-
-.margin-top {
-    margin-top: 2rem;
-}
-
-.flex-center {
-     display: flex;
-     column-gap: 0.5em;
-    justify-content: right;
-    align-items: center;
-}
-
-.font-size {
-    font-weight: 300;
-    font-size: small;
 }
