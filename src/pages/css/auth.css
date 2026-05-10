@@ -15,9 +15,9 @@
 }
 
 .card-round-box {
-    background: #fff;
+    background: #ffffffde;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0px 0px 1px rgb(0, 0, 0);
 }
 
 /* Logo */
@@ -128,8 +128,44 @@ button:hover {
 
 .or-usephone {
     text-align: center;
+    margin-bottom:0.9rem;
 }
 
 .loader-margin {
-    margin-top: 1.3rem;
+    margin-top: 1.5rem;
+}
+
+.errMs ,.sucMs{
+    background: red;
+    color: white;
+    position: absolute;
+    top:5rem;
+    right: 0.6em;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    
+}
+
+.errMs {
+    background: red;
+}
+
+.sucMs {
+    background: green;
+}
+
+
+
+.changePassword {
+    color: blue;
+    text-align: right;
+    text-decoration: underline;
+    font-size: small;
+    margin-top: 0.1em;
+}
+
+@media (width < 560px) {
+    .errMs,.sucMs {
+        font-size: small;
+    }
 }

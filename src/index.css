@@ -1,9 +1,11 @@
 html {
-   font-family: "Roboto", sans-serif;
+   font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: var(--blue-color);
+  /* background: whitesmoke; */
+  color: rgba(0, 0, 0, 0.687);
+  min-height: 100dvh;
 }
 
 .card-round-box{

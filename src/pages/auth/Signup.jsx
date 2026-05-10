@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Components
 import { Loader } from "../../component/Loader/Loader";
@@ -12,23 +12,89 @@ export const Signup = () => {
   const [emailPhoneBox, setEmailPhoneBox] = useState(false);
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  //
+  const [verifyPasw, setverifyPasw] = useState(false);
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSignin = async (e) => {
+  // Error Message
+  const [err, setErr] = useState("");
+  const [sucMs, setSucMs] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  // disable
+  const [isDisable, setIsDisable] = useState(false);
+
+  // navigate
+  const navigate = useNavigate();
+
+  // email path
+  const CHECK_EMAIL = "/auth-email";
+  const SIGN_IN = "/auth-signin";
+
+  //  handleEmail
+  const handleCheckEmail = async (e) => {
     e.preventDefault();
 
-    setLoading(true);
-
     try {
+      setLoading(true);
       const payload = emailPhoneBox ? { phone } : { email };
 
-      await api.post("/auth-email", payload);
+      const verifyemail = await api.post(CHECK_EMAIL, payload);
 
-      console.log("Success");
+      const user = verifyemail.data.isExist;
+
+      const getemail = verifyemail.data.user;
+
+      localStorage.setItem("email", getemail);
+
+      if (user === true) {
+        setverifyPasw(true);
+      }
+
+      if (user === false) {
+        setverifyPasw(false);
+      }
     } catch (err) {
-      console.error(err);
+      if (!err.response) {
+        setErr("No response from server");
+        console.log(err);
+      }
     } finally {
       setLoading(false);
+    }
+  };
+
+  // handleSignin
+  const handleSignin = async (e) => {
+    e.preventDefault();
+    const userEmail = localStorage.getItem("email");
+    //
+    try {
+      const signin = await api.post(SIGN_IN, {
+        email: userEmail,
+        password,
+      });
+
+      const user_token = signin.data.token;
+      localStorage.setItem("token", user_token);
+      setSucMs(signin.data.message);
+
+      const hidesuccMS = () => {
+        setSucMs(null);
+        navigate("/userdashboard");
+        setIsDisable(true);
+      };
+
+      setTimeout(hidesuccMS, 3000);
+    } catch (err) {
+      setErr(err.response.data.message);
+
+      const hideErrMS = () => {
+        setErr(null);
+      };
+
+      setTimeout(hideErrMS, 3000);
     }
   };
 
@@ -37,6 +103,9 @@ export const Signup = () => {
 
   return (
     <div className="auth-center">
+      {err && <p className="errMs">{err}</p>}
+      {sucMs && <p className="sucMs">{sucMs}</p>}
+
       <div className="form-wrapper card-round-box">
         <div className="mia">
           <img src={mia} alt="mia" />
@@ -53,42 +122,69 @@ export const Signup = () => {
           <b> tumia chumba cha hapo chini</b>
         </p>
 
-        <form onSubmit={handleSignin}>
-          {emailPhoneBox ? (
+        <form onSubmit={verifyPasw ? handleSignin : handleCheckEmail}>
+          {verifyPasw ? (
             <div className="form-input-box flex-column-left">
-              <label>Andika nambari za simu</label>
+              <label>Andika neno la siri</label>
               <input
-                type="text"
-                placeholder="000 0000 000"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                type={showPassword ? "text" : "password"}
+                required
+                placeholder="* * * * * * *"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
+              <p
+                className="changePassword"
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                {showPassword ? "Hide" : "Show"}
+              </p>
             </div>
           ) : (
-            <div className="form-input-box flex-column-left">
-              <label>Andika barua pepe</label>
-              <input
-                type="email"
-                placeholder="mfano12@gmail.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
+            <div>
+              {emailPhoneBox ? (
+                <div className="form-input-box flex-column-left">
+                  <label>Andika nambari za simu</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="000 0000 000"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                  />
+                </div>
+              ) : (
+                <div className="form-input-box flex-column-left">
+                  <label>Andika barua pepe</label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="mfano12@gmail.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+              )}
             </div>
           )}
 
-          <p className="or-usephone">_______au_______</p>
+          {!verifyPasw && (
+            <div>
+              <p className="or-usephone">_______au_______</p>
 
-          <div className="phone-email-box font-size">
-            {emailPhoneBox ? (
-              <p className="email" onClick={handlePhoneBox}>
-                Tumia barua pepe
-              </p>
-            ) : (
-              <p className="phone-number" onClick={handleEmailBox}>
-                Tumia nambari za simu
-              </p>
-            )}
-          </div>
+              <div className="phone-email-box font-size">
+                {emailPhoneBox ? (
+                  <p className="email" onClick={handlePhoneBox}>
+                    Tumia barua pepe
+                  </p>
+                ) : (
+                  <p className="phone-number" onClick={handleEmailBox}>
+                    Tumia nambari za simu
+                  </p>
+                )}
+              </div>
+            </div>
+          )}
 
           <div className="form-input-box loader-margin">
             {loading ? (
@@ -97,7 +193,9 @@ export const Signup = () => {
                 <span>Tafadhali subiri...</span>
               </div>
             ) : (
-              <button type="submit">Ingia</button>
+              <>
+                <button type="submit">{verifyPasw ? "Tuma" : "Ingia"}</button>
+              </>
             )}
           </div>
         </form>
