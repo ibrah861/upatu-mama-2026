@@ -21,12 +21,16 @@ export const UserDashboard = () => {
               <div>
                 <p className="bold">Taarifa binafsi</p>
                 <div className="profile-infor">
-                  <div className="image-profile">I</div>
+                  <div className="image">
+                    <div className="image-profile">
+                      <span>I</span>
+                    </div>
+                  </div>
+
                   <div className="user-infor">
                     <p>Ibrahim Amour Ali</p>
                     <p>ibra1980f@gmail.com</p>
-
-                    <hr />
+                    <br />
                     <p>
                       Status :<span className="active"> Active</span>
                     </p>
@@ -35,6 +39,7 @@ export const UserDashboard = () => {
                   </div>
                 </div>
               </div>
+
               <div>
                 <div className="profile-dynamic">
                   <p className="progress-head">Payment Progress Bar</p>
