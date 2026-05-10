@@ -216,4 +216,8 @@ main h3{
   align-items: center;
   justify-content: center;
 }
+
+.left {
+  text-align: left;
+}
 } 

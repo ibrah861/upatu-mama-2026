@@ -31,10 +31,10 @@ export const UserDashboard = () => {
                     <p>Ibrahim Amour Ali</p>
                     <p>ibra1980f@gmail.com</p>
                     <br />
-                    <p>
+                    <p className="left">
                       Status :<span className="active"> Active</span>
                     </p>
-                    <p>Payment type : Water bill</p>
+                    <p className="left">Payment type : Water bill</p>
                     <button>View more Infor</button>
                   </div>
                 </div>
