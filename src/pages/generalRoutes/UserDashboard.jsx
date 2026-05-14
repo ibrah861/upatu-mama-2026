@@ -67,12 +67,6 @@ export const UserDashboard = () => {
                 </div>
               </div>
             </div>
-
-            {/* <div className="about-service">
-              <section className="sec1 heigth box-shadow">1</section>
-              <h2 className="sec2 heigth box-shadow">2</h2>
-              <aside className="sec3 heigth box-shadow">3</aside>
-            </div> */}
           </main>
         </div>
       </div>
