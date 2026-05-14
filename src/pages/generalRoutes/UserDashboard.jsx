@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import backgroundImage from "../../assets/Background.jpg";
 import graph from "../../assets/graph.jpg";
+import user from "../../assets/user.svg";
 
 // custom hooks
 import { useAuthentication } from "../../custom_hooks/useAuthHooks";
@@ -15,15 +16,19 @@ export const UserDashboard = () => {
       <div>
         <div className="background-hero-image">
           <main>
-            <h3>Karibu, Ibrahim Amour Ali</h3>
+            <h3>Welcome, Ibrahim Amour Ali</h3>
 
             <div className="detail">
               <div>
-                <p className="bold">Taarifa binafsi</p>
+                <p className="bold">Personal details</p>
                 <div className="profile-infor">
                   <div className="image">
                     <div className="image-profile">
-                      <span>I</span>
+                      <img
+                        src={user}
+                        alt="user"
+                        className="user-image-avator"
+                      />{" "}
                     </div>
                   </div>
 
