@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import backgroundImage from "../../assets/Background.jpg";
 import graph from "../../assets/graph.jpg";
 import user from "../../assets/user.svg";
+import { FaCheckCircle } from "react-icons/fa";
 
 // custom hooks
 import { useAuthentication } from "../../custom_hooks/useAuthHooks";
@@ -28,7 +29,7 @@ export const UserDashboard = () => {
                         src={user}
                         alt="user"
                         className="user-image-avator"
-                      />{" "}
+                      />
                     </div>
                   </div>
 
@@ -37,9 +38,14 @@ export const UserDashboard = () => {
                     <p>ibra1980f@gmail.com</p>
                     <br />
                     <p className="left">
-                      Status :<span className="active"> Active</span>
+                      Status : &nbsp;
+                      <span className="active"> Active</span>&nbsp;&nbsp;
+                      <FaCheckCircle color="blue" size={13} />
                     </p>
-                    <p className="left">Payment type : Water bill</p>
+                    <p className="left">
+                      Payment type : &nbsp;
+                      <span className="payment-type"> WATER BILL</span>
+                    </p>
                     <button>View more Infor</button>
                   </div>
                 </div>

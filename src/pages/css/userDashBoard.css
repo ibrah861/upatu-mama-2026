@@ -61,6 +61,20 @@ main h3 {
   box-shadow: 0px 0px 2px gray;
 }
 
+.left {
+  display: flex;
+  align-items: center;
+}
+
+
+.payment-type {
+  color: green;
+}
+
+.active {
+  color: green;
+}
+
 
 .user-image-avator {
   width: 1.3em;
@@ -70,7 +84,7 @@ main h3 {
 .user-infor {
   display: flex;
   flex-direction: column;
-  row-gap: 0.1em;
+  row-gap: 0.5px;
 }
 
 .user-infor :nth-child(1) {
@@ -92,7 +106,7 @@ main h3 {
 }
 
 .user-infor :nth-child(4) {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.1rem;
 }
 
 .user-infor > button {
@@ -163,6 +177,8 @@ main h3 {
   width: inherit;
   
 } 
+
+
 
 
 /* MEDIA QUERY */
