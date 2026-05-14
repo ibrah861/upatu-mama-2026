@@ -20,7 +20,7 @@ export const UserDashboard = () => {
             <h3>Welcome, Ibrahim Amour Ali</h3>
 
             <div className="detail">
-              <div>
+              <div className="box-shadow">
                 <p className="bold">Personal details</p>
                 <div className="profile-infor">
                   <div className="image">
