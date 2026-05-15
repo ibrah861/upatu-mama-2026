@@ -1,9 +1,36 @@
 /* Layout */
+.section {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.section > .auth-center {
+    width: 30%;
+}
+
+.section > .bottom-img {
+    width: 60%;
+}
+
+.bottom-img {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-img img {
+    max-width: 100%;
+}
+
 .auth-center {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50vh;
+    min-height: 100vh;
     /* background: #f7f7f7; */
    
 }
@@ -204,19 +231,47 @@ button:hover {
     column-gap: 0.7em;
 }
 
-.bottom-img {
-    width: 100%;
-    overflow: hidden;
-}
 
-.bottom-img img {
-    max-width: 100%;
-    width: 30em;
-    object-fit: cover;
-}
 
 @media (width < 460px) {
     .errMs,.sucMs {
         font-size: small;
     }
+
+    /* Layout */
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.section > .auth-center {
+    width: 100%;
+}
+
+.section > .bottom-img {
+    width: 100%;
+}
+}
+
+@media (width < 860px) {
+    
+    /* Layout */
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section > .auth-center {
+    width: 100%;
+}
+
+.section > .bottom-img {
+    width: 100%;
+}
+}
+
+

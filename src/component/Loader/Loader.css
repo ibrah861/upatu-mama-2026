@@ -1,18 +1,19 @@
-.spiner {
-    width: 1.3rem;
-    height: 1.3rem;
-    border:2px solid blue;
-    border-bottom: 2px solid transparent;
-    border-radius: 50px;
-    animation: rotor 1s linear 500ms infinite normal ;
-    
+.loader {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid rgba(255, 0, 0, 0.822);
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
 }
 
-@keyframes rotor {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
