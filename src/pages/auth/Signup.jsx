@@ -173,7 +173,9 @@ export const Signup = () => {
 
           {!verifyPasw && (
             <div>
-              <p className="or-usephone">_______au_______</p>
+              <div className="or-usephone">
+                <span>______au______</span>
+              </div>
 
               <div className="phone-email-box font-size">
                 {emailPhoneBox ? (
