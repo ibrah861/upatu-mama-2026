@@ -83,19 +83,29 @@ h2 {
     font-size: 0.85rem;
 }
 
-.form-input-box input {
+.input-email  input {
     padding: 0.8rem 0.7rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background: white;
-    transition: 0.2s;
+    border: none;
+     outline: none;
+     background: inherit;
 }
 
-.form-input-box input:focus {
-    outline: none;
-    border-color: #2e7d32;
-    background: #fff;
+.input-email > input {
+    background: inherit;
+   
 }
+
+.input-email {
+    border: 1px solid black;
+     border-radius: 6px;
+    background: white;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    padding: 0 0.7rem;
+    column-gap: 1em;
+}
+
 
 /* Toggle */
 .toggle {
@@ -144,7 +154,7 @@ button:hover {
 .phone-email-box {
     margin-top: 0.7rem;
     color:blue;
-    font-size: small;
+    font-size: x-small;
     text-decoration: underline;
 }
 

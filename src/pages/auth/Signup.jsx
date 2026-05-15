@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
+import { MdOutlineMail } from "react-icons/md";
 
 // Components
 import { Loader } from "../../component/Loader/Loader";
@@ -159,13 +160,16 @@ export const Signup = () => {
               ) : (
                 <div className="form-input-box flex-column-left">
                   <label>Andika barua pepe</label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="mfano12@gmail.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
+                  <div className="input-email">
+                    <MdOutlineMail size={20} color="#555" />
+                    <input
+                      type="email"
+                      required
+                      placeholder="mfano12@gmail.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
                 </div>
               )}
             </div>
