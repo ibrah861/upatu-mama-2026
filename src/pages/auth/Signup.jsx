@@ -107,20 +107,22 @@ export const Signup = () => {
       {sucMs && <p className="sucMs">{sucMs}</p>}
 
       <div className="form-wrapper card-round-box">
-        <div className="mia">
-          <img src={mia} alt="mia" />
+        <div className="green-bg">
+          <div className="mia">
+            <img src={mia} alt="mia" />
+          </div>
+
+          <hr />
+          <br />
+
+          <h2>Ingia</h2>
+
+          <p className="signin-description">
+            Ingia ndani ya akaunti yako kwa kuandika barua pepe au nambari za
+            simu.
+            <b> tumia chumba cha hapo chini</b>
+          </p>
         </div>
-
-        <hr />
-        <br />
-
-        <h2>Ingia</h2>
-
-        <p className="signin-description">
-          Ingia ndani ya akaunti yako kwa kuandika barua pepe au nambari za
-          simu.
-          <b> tumia chumba cha hapo chini</b>
-        </p>
 
         <form onSubmit={verifyPasw ? handleSignin : handleCheckEmail}>
           {verifyPasw ? (

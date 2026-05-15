@@ -2,14 +2,13 @@ import React, { useEffect } from "react";
 import backgroundImage from "../../assets/Background.jpg";
 import graph from "../../assets/graph.jpg";
 import user from "../../assets/user.svg";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 
 // custom hooks
 import { useAuthentication } from "../../custom_hooks/useAuthHooks";
 
 export const UserDashboard = () => {
   const USER = "/user";
-
   useAuthentication(USER);
 
   return (
@@ -37,11 +36,21 @@ export const UserDashboard = () => {
                     <p>Ibrahim Amour Ali</p>
                     <p>ibra1980f@gmail.com</p>
                     <br />
-                    <p className="left">
+                    <div className="left">
                       Status : &nbsp;
-                      <span className="active"> Active</span>&nbsp;&nbsp;
-                      <FaCheckCircle color="blue" size={13} />
-                    </p>
+                      {false ? (
+                        <div>
+                          <span className="active"> Active</span>&nbsp;&nbsp;
+                          <FaCheckCircle color="blue" size={13} />
+                        </div>
+                      ) : (
+                        <div>
+                          <span>
+                            Disabled <FaTimesCircle color="red" size={13} />
+                          </span>
+                        </div>
+                      )}
+                    </div>
                     <p className="left">
                       Payment type : &nbsp;
                       <span className="payment-type"> WATER BILL</span>

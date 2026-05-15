@@ -46,7 +46,7 @@ main h3 {
   padding: 0.3em 0.8em;
 }
 
-.profile-infor > .image-profile {
+.profile-infor > .image {
   align-self: baseline;
 }
 
@@ -60,6 +60,7 @@ main h3 {
   border-radius: 50px;
   box-shadow: 0px 0px 2px gray;
 }
+
 
 .left {
   display: flex;
