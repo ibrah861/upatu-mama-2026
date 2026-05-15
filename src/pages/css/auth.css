@@ -3,13 +3,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 78vh;
+    min-height: 50vh;
     /* background: #f7f7f7; */
    
 }
 
+.hr {
+    margin: 0 4rem;
+}
+
 .green-bg {
-    background: rgba(0, 128, 0, 0.845);
+    background: rgba(0, 128, 0, 0.696);
     color: white;
     border-radius: 0.8px 0.8px 1em 1em;
     padding: 0.6rem 0;
@@ -17,6 +21,10 @@
 }
 
 .green-bg > p {
+    color: rgba(255, 255, 255, 0.797);
+}
+
+.green-bg > p > b {
     color: white;
 }
 
@@ -76,7 +84,7 @@ h2 {
 }
 
 .form-input-box input {
-    padding: 0.6rem 0.7rem;
+    padding: 1.0rem 0.7rem;
     border: 1px solid #ccc;
     border-radius: 6px;
     background: white;
@@ -176,6 +184,14 @@ button:hover {
     text-decoration: underline;
     font-size: small;
     margin-top: 0.1em;
+}
+
+/* icons btn */
+.icons-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.7em;
 }
 
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaSignInAlt } from "react-icons/fa";
 
 // Components
 import { Loader } from "../../component/Loader/Loader";
@@ -112,7 +113,7 @@ export const Signup = () => {
             <img src={mia} alt="mia" />
           </div>
 
-          <hr />
+          <hr className="hr" />
           <br />
 
           <h2>Ingia</h2>
@@ -196,7 +197,15 @@ export const Signup = () => {
               </div>
             ) : (
               <>
-                <button type="submit">{verifyPasw ? "Tuma" : "Ingia"}</button>
+                <button type="submit">
+                  {verifyPasw ? (
+                    "Tuma"
+                  ) : (
+                    <div className="icons-btn">
+                      <FaSignInAlt size={13} color="white" /> <span>Ingia</span>
+                    </div>
+                  )}
+                </button>
               </>
             )}
           </div>
