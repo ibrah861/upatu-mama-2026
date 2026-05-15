@@ -28,6 +28,7 @@ export const UserDashboard = () => {
                         src={user}
                         alt="user"
                         className="user-image-avator"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -70,7 +71,7 @@ export const UserDashboard = () => {
                 </div>
                 <div className="progress-bar-details">
                   <div className="progress-bar-img">
-                    <img src={graph} alt="graph" />
+                    <img src={graph} alt="graph" loading="lazy" />
                   </div>
                   <div className="progress-bar-description">
                     <p>

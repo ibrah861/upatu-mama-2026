@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
+import { FiPhone } from "react-icons/fi";
 
 // Components
 import { Loader } from "../../component/Loader/Loader";
@@ -9,6 +10,7 @@ import api from "../../utility/Axios";
 
 // assets
 import mia from "../../assets/mia.svg";
+import internet from "../../assets/internet.jpg";
 
 export const Signup = () => {
   const [emailPhoneBox, setEmailPhoneBox] = useState(false);
@@ -104,119 +106,128 @@ export const Signup = () => {
   const handleEmailBox = () => setEmailPhoneBox(true);
 
   return (
-    <div className="auth-center">
-      {err && <p className="errMs">{err}</p>}
-      {sucMs && <p className="sucMs">{sucMs}</p>}
+    <>
+      <div className="auth-center">
+        {err && <p className="errMs">{err}</p>}
+        {sucMs && <p className="sucMs">{sucMs}</p>}
 
-      <div className="form-wrapper card-round-box">
-        <div className="green-bg">
-          <div className="mia">
-            <img src={mia} alt="mia" />
+        <div className="form-wrapper card-round-box">
+          <div className="green-bg">
+            <div className="mia">
+              <img src={mia} alt="mia" />
+            </div>
+
+            <hr className="hr" />
+            <br />
+
+            <h2>Ingia</h2>
+
+            <p className="signin-description">
+              Ingia ndani ya akaunti yako kwa kuandika barua pepe au nambari za
+              simu.
+              <b> tumia chumba cha hapo chini</b>
+            </p>
           </div>
 
-          <hr className="hr" />
-          <br />
-
-          <h2>Ingia</h2>
-
-          <p className="signin-description">
-            Ingia ndani ya akaunti yako kwa kuandika barua pepe au nambari za
-            simu.
-            <b> tumia chumba cha hapo chini</b>
-          </p>
-        </div>
-
-        <form onSubmit={verifyPasw ? handleSignin : handleCheckEmail}>
-          {verifyPasw ? (
-            <div className="form-input-box flex-column-left">
-              <label>Andika neno la siri</label>
-              <input
-                type={showPassword ? "text" : "password"}
-                required
-                placeholder="* * * * * * *"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <p
-                className="changePassword"
-                onClick={() => setShowPassword((prev) => !prev)}
-              >
-                {showPassword ? "Hide" : "Show"}
-              </p>
-            </div>
-          ) : (
-            <div>
-              {emailPhoneBox ? (
-                <div className="form-input-box flex-column-left">
-                  <label>Andika nambari za simu</label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="000 0000 000"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                  />
-                </div>
-              ) : (
-                <div className="form-input-box flex-column-left">
-                  <label>Andika barua pepe</label>
-                  <div className="input-email">
-                    <MdOutlineMail size={20} color="#555" />
-                    <input
-                      type="email"
-                      required
-                      placeholder="mfano12@gmail.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
-
-          {!verifyPasw && (
-            <div>
-              <div className="or-usephone">
-                <span>______au______</span>
-              </div>
-
-              <div className="phone-email-box font-size">
-                {emailPhoneBox ? (
-                  <p className="email" onClick={handlePhoneBox}>
-                    Tumia barua pepe
-                  </p>
-                ) : (
-                  <p className="phone-number" onClick={handleEmailBox}>
-                    Tumia nambari za simu
-                  </p>
-                )}
-              </div>
-            </div>
-          )}
-
-          <div className="form-input-box loader-margin">
-            {loading ? (
-              <div className="signin-text flex-center">
-                <Loader />
-                <span>Tafadhali subiri...</span>
+          <form onSubmit={verifyPasw ? handleSignin : handleCheckEmail}>
+            {verifyPasw ? (
+              <div className="form-input-box flex-column-left">
+                <label>Andika neno la siri</label>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  required
+                  placeholder="* * * * * * *"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <p
+                  className="changePassword"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </p>
               </div>
             ) : (
-              <>
-                <button type="submit">
-                  {verifyPasw ? (
-                    "Tuma"
-                  ) : (
-                    <div className="icons-btn">
-                      <FaSignInAlt size={13} color="white" /> <span>Ingia</span>
+              <div>
+                {emailPhoneBox ? (
+                  <div className="form-input-box flex-column-left">
+                    <label>Andika nambari za simu</label>
+                    <div className="input-email">
+                      <FiPhone className="phone-icon" />
+                      <input
+                        type="text"
+                        required
+                        placeholder="000 0000 000"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                      />
                     </div>
-                  )}
-                </button>
-              </>
+                  </div>
+                ) : (
+                  <div className="form-input-box flex-column-left">
+                    <label>Andika barua pepe</label>
+                    <div className="input-email">
+                      <MdOutlineMail size={20} color="#555" />
+                      <input
+                        type="email"
+                        required
+                        placeholder="mfano12@gmail.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
             )}
-          </div>
-        </form>
+
+            {!verifyPasw && (
+              <div>
+                <div className="or-usephone">
+                  <span>______au______</span>
+                </div>
+
+                <div className="phone-email-box font-size">
+                  {emailPhoneBox ? (
+                    <p className="email" onClick={handlePhoneBox}>
+                      Tumia barua pepe
+                    </p>
+                  ) : (
+                    <p className="phone-number" onClick={handleEmailBox}>
+                      Tumia nambari za simu
+                    </p>
+                  )}
+                </div>
+              </div>
+            )}
+
+            <div className="form-input-box loader-margin">
+              {loading ? (
+                <div className="signin-text flex-center">
+                  <Loader />
+                  <span>Tafadhali subiri...</span>
+                </div>
+              ) : (
+                <>
+                  <button type="submit">
+                    {verifyPasw ? (
+                      "Tuma"
+                    ) : (
+                      <div className="icons-btn">
+                        <FaSignInAlt size={13} color="white" />{" "}
+                        <span>Ingia</span>
+                      </div>
+                    )}
+                  </button>
+                </>
+              )}
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+      <div className="bottom-img">
+        <img src={internet} alt="" />
+      </div>
+    </>
   );
 };

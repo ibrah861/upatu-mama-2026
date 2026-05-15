@@ -92,8 +92,10 @@ h2 {
 
 .input-email > input {
     background: inherit;
-   
+    width: 100%;
 }
+
+
 
 .input-email {
     border: 1px solid black;
@@ -152,7 +154,8 @@ button:hover {
 }
 
 .phone-email-box {
-    margin-top: 0.7rem;
+    margin-top: 1.7rem;
+    margin-bottom: 2em;
     color:blue;
     font-size: x-small;
     text-decoration: underline;
@@ -162,7 +165,6 @@ button:hover {
     text-align: center;
     font-size: small;
 }
-
 
 
 .errMs ,.sucMs{
@@ -202,8 +204,16 @@ button:hover {
     column-gap: 0.7em;
 }
 
+.bottom-img {
+    width: 100%;
+    overflow: hidden;
+}
 
-
+.bottom-img img {
+    max-width: 100%;
+    width: 30em;
+    object-fit: cover;
+}
 
 @media (width < 460px) {
     .errMs,.sucMs {

@@ -45,7 +45,7 @@
 
 @media (width < 450px) {
     main {
-      width: 100%;
+      width: 90%;
       margin: 0;
       padding: 0 0.8rem;
       min-height: 100dvh;
