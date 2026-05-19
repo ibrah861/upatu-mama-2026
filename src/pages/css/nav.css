@@ -12,7 +12,7 @@
   right: 0;
   bottom: 0;
   overflow-x: auto;
-  
+  margin-top: 12rem;
  
 }
 
@@ -59,6 +59,7 @@ nav ul li {
   .nav {
     height: auto;
     padding: 0.6em 0.3em;
+    
   }
 
  .nav-class {
