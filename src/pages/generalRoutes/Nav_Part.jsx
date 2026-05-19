@@ -5,15 +5,15 @@ export const Nav_Part = () => {
   return (
     <div className="nav-part">
       <div className="icons">
-        <FaHome size={34} />
+        <FaHome size={24} />
         <p>Home</p>
       </div>
       <div className="icons">
-        <FaCreditCard size={34} />
+        <FaCreditCard size={24} />
         <p>Payment</p>
       </div>
       <div className="icons">
-        <FaHistory size={34} />
+        <FaHistory size={24} />
         <p>History</p>
       </div>
     </div>
