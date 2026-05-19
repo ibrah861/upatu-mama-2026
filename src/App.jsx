@@ -12,6 +12,7 @@ import { Signup } from "./pages/auth/Signup";
 import { NotFound } from "./pages/generalRoutes/NotFound";
 import { UserDashboard } from "./pages/protectedRoutes/UserDashboard";
 import { Navigation } from "./pages/generalRoutes/Navigation";
+
 import { Reducer } from "./pages/auth/Reducer";
 import { useEffect, useState } from "react";
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/userdashboard" element={<Signup />} />
         <Route path="*" element={<NotFound />} />
         <Route path="reducer" element={<Reducer />} />
+
         <Route path="/" element={<UserDashboard />} />
       </Routes>
       {hideNav && <Navigation />}

@@ -1,5 +1,11 @@
 import React from "react";
-import { FaHome, FaCreditCard, FaHistory } from "react-icons/fa";
+import {
+  FaHome,
+  FaCreditCard,
+  FaHistory,
+  FaBars,
+  FaFileInvoiceDollar,
+} from "react-icons/fa";
 
 export const Nav_Part = () => {
   return (
@@ -13,8 +19,16 @@ export const Nav_Part = () => {
         <p>Payment</p>
       </div>
       <div className="icons">
+        <FaFileInvoiceDollar size={24} />
+        <p>Invoice</p>
+      </div>
+      <div className="icons">
         <FaHistory size={24} />
         <p>History</p>
+      </div>
+      <div className="icons">
+        <FaBars size={24} />
+        <p>Menu</p>
       </div>
     </div>
   );

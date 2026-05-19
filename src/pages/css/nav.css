@@ -11,6 +11,9 @@
   left: 0;
   right: 0;
   bottom: 0;
+  overflow-x: auto;
+  
+ 
 }
 
 .image-mia {
@@ -32,7 +35,7 @@ nav ul li {
 
 
 .nav-part {
-  width: 100%;
+  min-width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -43,6 +46,7 @@ nav ul li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 33.33%;
 }
 
 .icons > p {
