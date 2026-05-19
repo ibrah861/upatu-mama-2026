@@ -12,6 +12,7 @@ import { Signup } from "./pages/auth/Signup";
 import { NotFound } from "./pages/generalRoutes/NotFound";
 import { UserDashboard } from "./pages/protectedRoutes/UserDashboard";
 import { Navigation } from "./pages/generalRoutes/Navigation";
+import { Reducer } from "./pages/auth/Reducer";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
   const location = useLocation();
   const path = location.pathname;
   useEffect(() => {
-    if (path !== "/") {
+    if (path !== "/userdashboard") {
       setHideNav(true);
     }
   }, []);
@@ -29,13 +30,13 @@ function App() {
   //
   return (
     <>
-      {hideNav && <Navigation />}
-
       <Routes>
-        <Route path="/" element={<Signup />} />
+        <Route path="/userdashboard" element={<Signup />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/userdashboard" element={<UserDashboard />} />
+        <Route path="reducer" element={<Reducer />} />
+        <Route path="/" element={<UserDashboard />} />
       </Routes>
+      {hideNav && <Navigation />}
     </>
   );
 }

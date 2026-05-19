@@ -1,12 +1,16 @@
 .nav {
-  background: white;
-  height: 3.8rem;
+  background: black;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 3rem;
   box-shadow: 0px 0px 2px black;
   border-bottom: 3px solid black;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .image-mia {
@@ -26,15 +30,43 @@ nav ul li {
   font-weight: 500;
 }
 
+
+.nav-part {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons > p {
+  font-size: small;
+}
+
 /* MEADIA QUERY */
 
 @media (width < 450px) {
   .nav {
     height: auto;
-    padding: 0 0.3em;
+    padding: 0.6em 0.3em;
   }
 
-  nav ul {
+ .nav-class {
+    display: none;
+  }
+
+  .image-mia {
+    display: none;
+  }
+
+  .signout-button {
+    width: 100%;
     display: none;
   }
 }

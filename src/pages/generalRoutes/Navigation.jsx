@@ -1,5 +1,6 @@
 import React from "react";
 import mia from "../../assets/mia.svg";
+import { Nav_Part } from "./Nav_Part";
 
 export const Navigation = () => {
   return (
@@ -13,7 +14,7 @@ export const Navigation = () => {
         />
       </div>
 
-      <div>
+      <div className="nav-class">
         <nav>
           <ul>
             <li>Nyumbani</li>
@@ -23,8 +24,10 @@ export const Navigation = () => {
         </nav>
       </div>
 
-      <div>
-        <p>Ibrahim Amour Ali</p>
+      <Nav_Part />
+
+      <div className="signout-button">
+        <button>Sign out</button>
       </div>
     </div>
   );

@@ -75,6 +75,8 @@
     
 }
 
+
+
 .mia img {
     width: 3.2rem;
     height: 3.2rem;
@@ -94,6 +96,7 @@ h2 {
     text-align: center;
     font-size: 0.9rem;
     color: #555;
+    padding: 0.2em 1rem;
     margin-bottom: 1.5rem;
     line-height: 1.4;
 }
@@ -218,7 +221,7 @@ button:hover {
 .changePassword {
     color: blue;
     text-align: right;
-    text-decoration: underline;
+    cursor: pointer;
     font-size: small;
     margin-top: 0.1em;
 }
@@ -230,6 +233,8 @@ button:hover {
     align-items: center;
     column-gap: 0.7em;
 }
+
+
 
 
 

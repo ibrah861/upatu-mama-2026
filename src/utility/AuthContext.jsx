@@ -5,8 +5,11 @@ import { createContext } from "react";
 export const Auth = createContext();
 
 export const AuthContext = ({ children }) => {
-  const [authResponse, setAuthResponse] = useState([])
-  return <Auth.Provider value={authResponse, setAuthResponse}>
-    {children}
-    </Auth.Provider>;
+  const [authResponse, setAuthResponse] = useState([]);
+
+  return (
+    <Auth.Provider value={{ authResponse, setAuthResponse }}>
+      {children}
+    </Auth.Provider>
+  );
 };

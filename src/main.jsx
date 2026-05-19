@@ -10,9 +10,7 @@ import { AuthContext } from "./utility/AuthContext";
 createRoot(document.getElementById("root")).render(
   <AuthContext>
     <BrowserRouter>
-      <StrictMode>
-        <App />
-      </StrictMode>
+      <App />
     </BrowserRouter>
   </AuthContext>,
 );

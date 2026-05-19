@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaSignInAlt } from "react-icons/fa";
-import { MdOutlineMail } from "react-icons/md";
-import { FiPhone } from "react-icons/fi";
+import { MdOutlineMail, MdSend } from "react-icons/md";
+import { FaEye, FaEyeSlash, FaSignInAlt } from "react-icons/fa";
+import { FiLock, FiUnlock, FiSend, FiPhone } from "react-icons/fi";
 
 // Components
 import { Loader } from "../../component/Loader/Loader";
+import { Loading } from "../../component/Loader/Loading";
 import api from "../../utility/Axios";
 
 // assets
@@ -13,6 +14,7 @@ import mia from "../../assets/mia.svg";
 import internet from "../../assets/credential.png";
 
 export const Signup = () => {
+  // ----
   const [emailPhoneBox, setEmailPhoneBox] = useState(false);
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -134,19 +136,28 @@ export const Signup = () => {
               {verifyPasw ? (
                 <div className="form-input-box flex-column-left">
                   <label>Andika neno la siri</label>
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    required
-                    placeholder="* * * * * * *"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <p
-                    className="changePassword"
-                    onClick={() => setShowPassword((prev) => !prev)}
-                  >
-                    {showPassword ? "Hide" : "Show"}
-                  </p>
+                  <div className="input-email">
+                    <span>
+                      <FiUnlock />
+                    </span>
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      required
+                      placeholder="* * * * * * *"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <p
+                      className="changePassword"
+                      onClick={() => setShowPassword((prev) => !prev)}
+                    >
+                      {showPassword ? (
+                        <FaEyeSlash size={20} color="black" />
+                      ) : (
+                        <FaEye size={20} color="black" />
+                      )}
+                    </p>
+                  </div>
                 </div>
               ) : (
                 <div>
@@ -206,16 +217,19 @@ export const Signup = () => {
                 {loading ? (
                   <div className="signin-text flex-center">
                     <Loader />
-                    <span>Tafadhali subiri...</span>
+                    <Loading />
                   </div>
                 ) : (
                   <>
                     <button type="submit">
                       {verifyPasw ? (
-                        "Tuma"
+                        <div className="icons-btn">
+                          <MdSend />
+                          <span>Tuma</span>
+                        </div>
                       ) : (
                         <div className="icons-btn">
-                          <FaSignInAlt size={13} color="white" />{" "}
+                          <FaSignInAlt size={13} color="white" />
                           <span>Ingia</span>
                         </div>
                       )}
